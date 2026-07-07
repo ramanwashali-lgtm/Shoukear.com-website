@@ -3,39 +3,130 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nour</title>
-  <meta name="description" content="Welcome to Nour's website. The official website is coming soon." />
-  <style>
-    :root { --bg:#0f1020; --bg2:#1a1030; --fg:#f5f3ff; --muted:#b9b4d4; --accent:#c9a24b; }
-    * { box-sizing: border-box; }
-    html, body { height:100%; margin:0; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      color:var(--fg);
-      background:radial-gradient(1200px 800px at 50% -10%, var(--bg2), var(--bg));
-      display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;
-    }
-    .wrap { max-width:680px; }
-    .mark {
-      font-size:clamp(2.6rem,10vw,5rem); font-weight:700; letter-spacing:0.02em; margin:0 0 1rem;
-      background:linear-gradient(90deg,var(--fg),var(--accent));
-      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-    }
-    .tag { font-size:clamp(1.05rem,3.5vw,1.4rem); color:var(--muted); margin:0 0 2rem; font-weight:400; line-height:1.5; }
-    .soon {
-      display:inline-block; border:1px solid rgba(201,162,75,0.5); color:var(--accent);
-      border-radius:999px; padding:0.5rem 1.25rem; font-size:0.85rem; letter-spacing:0.15em; text-transform:uppercase;
-    }
-    footer { position:fixed; bottom:1.25rem; left:0; right:0; text-align:center; color:var(--muted); font-size:0.8rem; opacity:0.7; }
-  </style>
+  <title>Shoukear — Learn Arabic in the Netherlands</title>
+  <meta name="description" content="Private Arabic lessons in the Netherlands for adults and kids. In-person sessions at libraries and cafes. Book a free intro call." />
+  <link rel="stylesheet" href="css/style.css" />
+  <meta property="og:title" content="Shoukear — Learn Arabic in the Netherlands" />
+  <meta property="og:description" content="Private Arabic lessons in the Netherlands for adults and kids. In-person sessions at libraries and cafes. Book a free intro call." />
+  <meta property="og:image" content="https://shoukear.com/img/nour.jpg" />
+  <meta property="og:url" content="https://shoukear.com/" />
+  <!-- Cookie-free analytics: add provider script tag here once chosen (e.g. Plausible / Fathom) -->
 </head>
 <body>
-  <main class="wrap">
-    <h1 class="mark">Welcome to Nour's website for teaching Arabic in Utrecht </h1>
-    <p class="tag">The official website is coming soon…</p>
-    <span class="soon">Coming Soon</span>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__brand" href="index.html">Shoukear</a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="adults.html">Adults</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav__cta" href="contact.html">Book a lesson</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <div>
+          <h1>Learn Arabic with a native tutor, one‑on‑one</h1>
+          <p class="lead">
+            Private Arabic lessons for adults and children, taught in person
+            at libraries and cafes near you. Friendly, structured, and paced
+            to how you actually learn.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="contact.html">Book a free intro call</a>
+            <a class="btn btn--secondary" href="adults.html">Explore lessons</a>
+          </div>
+        </div>
+        <div class="hero__photo">
+          <img src="img/nour.jpg" alt="Nour, your Arabic tutor" width="755" height="1000" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Two tracks, one tutor</h2>
+        <p class="section-intro">
+          Whether you're an adult starting from scratch or looking for a
+          teacher for your child, lessons are tailored to the learner.
+        </p>
+        <div class="card-grid">
+          <div class="card">
+            <h3>For Adults</h3>
+            <p>
+              Structured conversation-first lessons for non-native speakers —
+              travel, heritage, work, or just for fun.
+            </p>
+            <a href="adults.html">See the adult track →</a>
+          </div>
+          <div class="card">
+            <h3>For Kids</h3>
+            <p>
+              Playful, age-appropriate Arabic lessons for children, with a
+              focus on speaking confidence and reading basics.
+            </p>
+            <a href="kids.html">See the kids track →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="container">
+        <h2>Why learn here</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Native speaker</h3>
+            <p>Learn from a native Arabic speaker with real teaching experience.</p>
+          </div>
+          <div class="card">
+            <h3>In your neighborhood</h3>
+            <p>Lessons happen at public libraries and cafes near you — no commute to a studio.</p>
+          </div>
+          <div class="card">
+            <h3>Safe for families</h3>
+            <p>
+              <span class="badge">✔ VOG certified</span><br /><br />
+              Verified good-conduct certificate (VOG) on file for parents' peace of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container" style="text-align:center;">
+        <h2>Ready to start?</h2>
+        <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+          Book a free 15-minute intro call to find the right fit — no
+          commitment required.
+        </p>
+        <a class="btn btn--primary" href="contact.html">Book your intro call</a>
+      </div>
+    </section>
   </main>
-  <footer>&copy; <span id="y"></span> shoukear.com</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/31600000000"
+    target="_blank"
+    rel="noopener"
+  >WhatsApp us</a>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Shoukear. All rights reserved.</span>
+      <span><a href="contact.html">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

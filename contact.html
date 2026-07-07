@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact &amp; Booking — Shoukear</title>
+  <meta name="description" content="Book a free intro call for Arabic lessons, or reach out via WhatsApp." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__brand" href="index.html">Shoukear</a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="adults.html">Adults</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav__cta" href="contact.html">Book a lesson</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner" style="grid-template-columns:1fr;">
+        <div>
+          <h1>Contact &amp; booking</h1>
+          <p class="lead">
+            Book a free 15-minute intro call to find the right fit, or reach
+            out directly on WhatsApp with any questions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <h2>Book your free intro call</h2>
+            <p>
+              The easiest way to get started: send a quick WhatsApp message
+              with a few words about who the lessons are for (you or your
+              child) and your level, and we'll plan a free 15-minute intro
+              call together.
+            </p>
+            <a
+              class="btn btn--whatsapp"
+              href="https://wa.me/31600000000"
+              target="_blank"
+              rel="noopener"
+            >Chat on WhatsApp</a>
+            <!-- Cal.com booking embed goes here once the account is set up, e.g.
+                 <div data-cal-link="username/intro-call"></div> -->
+          </div>
+          <div>
+            <h2>Good to know</h2>
+            <p>
+              Lessons take place in person at public libraries and cafes in
+              the Netherlands — we'll pick a spot that's convenient for you.
+            </p>
+            <p>
+              Messages are usually answered within a day. The intro call is
+              free and comes with no obligation at all.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/31600000000"
+    target="_blank"
+    rel="noopener"
+  >WhatsApp us</a>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Shoukear. All rights reserved.</span>
+      <span><a href="contact.html">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
