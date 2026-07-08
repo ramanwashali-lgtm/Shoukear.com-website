@@ -1,30 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shoukear — Learn Arabic in the Netherlands</title>
-  <meta name="description" content="Private Arabic lessons in the Netherlands for adults and kids. In-person sessions at libraries and cafes. Book a free intro call." />
+  <meta name="description" content="Private Arabic lessons in the Netherlands for adults and kids, €25 per lesson. In-person sessions at libraries and cafes. Book a free intro call." />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <meta property="og:title" content="Shoukear — Learn Arabic in the Netherlands" />
-  <meta property="og:description" content="Private Arabic lessons in the Netherlands for adults and kids. In-person sessions at libraries and cafes. Book a free intro call." />
+  <meta property="og:description" content="Private Arabic lessons in the Netherlands for adults and kids, €25 per lesson. In-person sessions at libraries and cafes. Book a free intro call." />
   <meta property="og:image" content="https://shoukear.com/nour.jpg" />
   <meta property="og:url" content="https://shoukear.com/" />
   <!-- Cookie-free analytics: add provider script tag here once chosen (e.g. Plausible / Fathom) -->
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
     <nav class="nav">
-      <a class="nav__brand" href="index.html">Shoukear</a>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="adults.html">Adults</a></li>
-        <li><a href="kids.html">Kids</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="nav__cta" href="contact.html">Book a lesson</a></li>
-      </ul>
+      <a class="nav__brand" href="index.html">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c9762e"/>
+              <stop offset="1" stop-color="#d9a441"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lg)"/>
+          <text x="24" y="32" font-size="23" text-anchor="middle" fill="#fdf7ec" font-family="'Tajawal','Geeza Pro','Arial',sans-serif" font-weight="700">ش</text>
+        </svg>
+        <span>Shoukear</span>
+      </a>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="adults.html" data-i18n="nav.adults">Adults</a></li>
+          <li><a href="kids.html" data-i18n="nav.kids">Kids</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li><a class="nav__cta" href="contact.html" data-i18n="nav.book">Book a lesson</a></li>
+        </ul>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en"><span class="flag">🇬🇧</span><span class="lang-label">EN</span></button>
+          <button type="button" data-lang="nl"><span class="flag">🇳🇱</span><span class="lang-label">NL</span></button>
+          <button type="button" data-lang="ar"><span class="flag">🇸🇦</span><span class="lang-label">ع</span></button>
+        </div>
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
     </nav>
   </header>
 
@@ -32,15 +55,16 @@
     <section class="hero">
       <div class="hero__inner">
         <div>
-          <h1>Learn Arabic with a native tutor, one‑on‑one</h1>
-          <p class="lead">
+          <span class="price-chip" data-i18n="price.chip">€25 per lesson · free intro call</span>
+          <h1 data-i18n="home.heroTitle">Learn Arabic with a native tutor, one-on-one</h1>
+          <p class="lead" data-i18n="home.heroLead">
             Private Arabic lessons for adults and children, taught in person
             at libraries and cafes near you. Friendly, structured, and paced
             to how you actually learn.
           </p>
           <div class="btn-row">
-            <a class="btn btn--primary" href="contact.html">Book a free intro call</a>
-            <a class="btn btn--secondary" href="adults.html">Explore lessons</a>
+            <a class="btn btn--primary" href="contact.html" data-i18n="btn.intro">Book a free intro call</a>
+            <a class="btn btn--secondary" href="adults.html" data-i18n="btn.explore">Explore lessons</a>
           </div>
         </div>
         <div class="hero__photo">
@@ -51,27 +75,27 @@
 
     <section>
       <div class="container">
-        <h2>Two tracks, one tutor</h2>
-        <p class="section-intro">
+        <h2 data-i18n="home.tracksTitle">Two tracks, one tutor</h2>
+        <p class="section-intro" data-i18n="home.tracksIntro">
           Whether you're an adult starting from scratch or looking for a
           teacher for your child, lessons are tailored to the learner.
         </p>
         <div class="card-grid">
           <div class="card">
-            <h3>For Adults</h3>
-            <p>
+            <h3 data-i18n="home.adultsTitle">For Adults</h3>
+            <p data-i18n="home.adultsText">
               Structured conversation-first lessons for non-native speakers —
               travel, heritage, work, or just for fun.
             </p>
-            <a href="adults.html">See the adult track →</a>
+            <a href="adults.html" data-i18n="home.adultsLink">See the adult track →</a>
           </div>
           <div class="card">
-            <h3>For Kids</h3>
-            <p>
+            <h3 data-i18n="home.kidsTitle">For Kids</h3>
+            <p data-i18n="home.kidsText">
               Playful, age-appropriate Arabic lessons for children, with a
               focus on speaking confidence and reading basics.
             </p>
-            <a href="kids.html">See the kids track →</a>
+            <a href="kids.html" data-i18n="home.kidsLink">See the kids track →</a>
           </div>
         </div>
       </div>
@@ -79,35 +103,35 @@
 
     <section class="alt">
       <div class="container">
-        <h2>Why learn here</h2>
+        <h2 data-i18n="home.whyTitle">Why learn here</h2>
         <div class="card-grid">
           <div class="card">
-            <h3>Native speaker</h3>
-            <p>Learn from a native Arabic speaker with real teaching experience.</p>
+            <h3 data-i18n="home.why1t">Native speaker</h3>
+            <p data-i18n="home.why1p">Learn from a native Arabic speaker with real teaching experience.</p>
           </div>
           <div class="card">
-            <h3>In your neighborhood</h3>
-            <p>Lessons happen at public libraries and cafes near you — no commute to a studio.</p>
+            <h3 data-i18n="home.why2t">In your neighborhood</h3>
+            <p data-i18n="home.why2p">Lessons happen at public libraries and cafes near you — no commute to a studio.</p>
           </div>
           <div class="card">
-            <h3>Safe for families</h3>
+            <h3 data-i18n="home.why3t">Safe for families</h3>
             <p>
-              <span class="badge">✔ VOG certified</span><br /><br />
-              Verified good-conduct certificate (VOG) on file for parents' peace of mind.
+              <span class="badge" data-i18n="home.vogBadge">✔ VOG certified</span><br /><br />
+              <span data-i18n="home.why3p">Verified good-conduct certificate (VOG) on file for parents' peace of mind.</span>
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="band">
       <div class="container" style="text-align:center;">
-        <h2>Ready to start?</h2>
-        <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+        <h2 data-i18n="home.readyTitle">Ready to start?</h2>
+        <p class="section-intro" style="margin-left:auto;margin-right:auto;" data-i18n="home.readyText">
           Book a free 15-minute intro call to find the right fit — no
           commitment required.
         </p>
-        <a class="btn btn--primary" href="contact.html">Book your intro call</a>
+        <a class="btn btn--primary" href="contact.html" data-i18n="btn.introShort">Book your intro call</a>
       </div>
     </section>
   </main>
@@ -117,12 +141,13 @@
     href="https://wa.me/31600000000"
     target="_blank"
     rel="noopener"
+    data-i18n="float.wa"
   >WhatsApp us</a>
 
   <footer class="site-footer">
     <div class="container">
-      <span>© <span id="year"></span> Shoukear. All rights reserved.</span>
-      <span><a href="contact.html">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a></span>
+      <span>© <span id="year"></span> <span data-i18n="footer.rights">Shoukear. All rights reserved.</span></span>
+      <span><a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener" data-i18n="footer.wa">WhatsApp</a></span>
     </div>
   </footer>
 

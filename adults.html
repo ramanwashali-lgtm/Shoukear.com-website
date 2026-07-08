@@ -1,40 +1,64 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arabic Lessons for Adults — Shoukear</title>
-  <meta name="description" content="One-on-one Arabic lessons for non-native adult speakers. In-person sessions at libraries and cafes in the Netherlands." />
+  <meta name="description" content="One-on-one Arabic lessons for non-native adult speakers, €25 per lesson. In-person sessions at libraries and cafes in the Netherlands." />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="adults">
   <header class="site-header">
     <nav class="nav">
-      <a class="nav__brand" href="index.html">Shoukear</a>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="adults.html">Adults</a></li>
-        <li><a href="kids.html">Kids</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="nav__cta" href="contact.html">Book a lesson</a></li>
-      </ul>
+      <a class="nav__brand" href="index.html">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c9762e"/>
+              <stop offset="1" stop-color="#d9a441"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lg)"/>
+          <text x="24" y="32" font-size="23" text-anchor="middle" fill="#fdf7ec" font-family="'Tajawal','Geeza Pro','Arial',sans-serif" font-weight="700">ش</text>
+        </svg>
+        <span>Shoukear</span>
+      </a>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="adults.html" data-i18n="nav.adults">Adults</a></li>
+          <li><a href="kids.html" data-i18n="nav.kids">Kids</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li><a class="nav__cta" href="contact.html" data-i18n="nav.book">Book a lesson</a></li>
+        </ul>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en"><span class="flag">🇬🇧</span><span class="lang-label">EN</span></button>
+          <button type="button" data-lang="nl"><span class="flag">🇳🇱</span><span class="lang-label">NL</span></button>
+          <button type="button" data-lang="ar"><span class="flag">🇸🇦</span><span class="lang-label">ع</span></button>
+        </div>
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero__inner" style="grid-template-columns:1fr;">
+      <div class="hero__inner hero__inner--single">
         <div>
-          <h1>Arabic lessons for adults</h1>
-          <p class="lead">
+          <span class="price-chip" data-i18n="price.chip">€25 per lesson · free intro call</span>
+          <h1 data-i18n="adults.heroTitle">Arabic lessons for adults</h1>
+          <p class="lead" data-i18n="adults.heroLead">
             For non-native speakers who want to actually speak Arabic —
             for travel, family, heritage, or work. Lessons are conversation-first
             and adapted to your level and goals.
           </p>
           <div class="btn-row">
-            <a class="btn btn--primary" href="contact.html">Book a free intro call</a>
+            <a class="btn btn--primary" href="contact.html" data-i18n="btn.intro">Book a free intro call</a>
           </div>
         </div>
       </div>
@@ -42,19 +66,19 @@
 
     <section>
       <div class="container">
-        <h2>How it works</h2>
+        <h2 data-i18n="adults.howTitle">How it works</h2>
         <div class="card-grid">
           <div class="card">
-            <h3>1. Free intro call</h3>
-            <p>A short, no-pressure call to understand your goals and current level.</p>
+            <h3 data-i18n="adults.how1t">1. Free intro call</h3>
+            <p data-i18n="adults.how1p">A short, no-pressure call to understand your goals and current level.</p>
           </div>
           <div class="card">
-            <h3>2. A plan for you</h3>
-            <p>Lessons built around what you actually want: everyday conversation, dialect, or classical Arabic (Fusha).</p>
+            <h3 data-i18n="adults.how2t">2. A plan for you</h3>
+            <p data-i18n="adults.how2p">Lessons built around what you actually want: everyday conversation, dialect, or classical Arabic (Fusha).</p>
           </div>
           <div class="card">
-            <h3>3. Regular practice</h3>
-            <p>Weekly or biweekly one-on-one sessions in person, at a library or cafe convenient to you.</p>
+            <h3 data-i18n="adults.how3t">3. Regular practice</h3>
+            <p data-i18n="adults.how3p">Weekly or biweekly one-on-one sessions in person, at a library or cafe convenient to you.</p>
           </div>
         </div>
       </div>
@@ -62,46 +86,44 @@
 
     <section class="alt">
       <div class="container">
-        <h2>Who this is for</h2>
+        <h2 data-i18n="adults.whoTitle">Who this is for</h2>
         <ul>
-          <li>Complete beginners who want a real head start before a trip or move</li>
-          <li>Heritage speakers who understand some Arabic but want to speak more confidently</li>
-          <li>Professionals who need working Arabic for their job</li>
-          <li>Anyone who's tried apps and wants an actual conversation partner</li>
+          <li data-i18n="adults.who1">Complete beginners who want a real head start before a trip or move</li>
+          <li data-i18n="adults.who2">Heritage speakers who understand some Arabic but want to speak more confidently</li>
+          <li data-i18n="adults.who3">Professionals who need working Arabic for their job</li>
+          <li data-i18n="adults.who4">Anyone who's tried apps and wants an actual conversation partner</li>
         </ul>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2>Format &amp; pricing</h2>
-        <p class="section-intro">
-          Lessons are one-on-one and in person, with single lessons and
-          multi-lesson packages available. Rates depend on frequency and
-          location — you'll get a clear, no-surprises quote in your free
-          intro call.
+        <h2 data-i18n="adults.priceTitle">Format &amp; pricing</h2>
+        <p class="section-intro" data-i18n="adults.priceIntro">
+          Lessons are one-on-one and in person, €25 per lesson. Start with a
+          free intro call — no commitment.
         </p>
         <div class="card-grid">
           <div class="card">
-            <h3>Single lesson</h3>
-            <p>Try a lesson with no commitment — perfect for finding out if it's a fit.</p>
+            <h3 data-i18n="adults.p1t">Single lesson</h3>
+            <p data-i18n="adults.p1p">€25 per lesson — try it with no commitment and see if it's a fit.</p>
           </div>
           <div class="card">
-            <h3>Lesson packages</h3>
-            <p>Weekly or biweekly sessions at a friendlier rate, building steady progress.</p>
+            <h3 data-i18n="adults.p2t">Lesson packages</h3>
+            <p data-i18n="adults.p2p">Weekly or biweekly sessions, building steady progress lesson by lesson.</p>
           </div>
           <div class="card">
-            <h3>Free intro call</h3>
-            <p>A short call to talk goals, level, and schedule — then you decide.</p>
+            <h3 data-i18n="adults.p3t">Free intro call</h3>
+            <p data-i18n="adults.p3p">A short call to talk goals, level, and schedule — then you decide.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="alt" style="text-align:center;">
+    <section class="band" style="text-align:center;">
       <div class="container">
-        <h2>Start with a free intro call</h2>
-        <a class="btn btn--primary" href="contact.html">Book your intro call</a>
+        <h2 data-i18n="adults.ctaTitle">Start with a free intro call</h2>
+        <a class="btn btn--primary" href="contact.html" data-i18n="btn.introShort">Book your intro call</a>
       </div>
     </section>
   </main>
@@ -111,12 +133,13 @@
     href="https://wa.me/31600000000"
     target="_blank"
     rel="noopener"
+    data-i18n="float.wa"
   >WhatsApp us</a>
 
   <footer class="site-footer">
     <div class="container">
-      <span>© <span id="year"></span> Shoukear. All rights reserved.</span>
-      <span><a href="contact.html">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a></span>
+      <span>© <span id="year"></span> <span data-i18n="footer.rights">Shoukear. All rights reserved.</span></span>
+      <span><a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener" data-i18n="footer.wa">WhatsApp</a></span>
     </div>
   </footer>
 

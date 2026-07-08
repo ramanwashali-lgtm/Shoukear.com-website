@@ -1,25 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Shoukear</title>
   <meta name="description" content="Meet your Arabic tutor: background, teaching philosophy, and credentials including a VOG certificate." />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="about">
   <header class="site-header">
     <nav class="nav">
-      <a class="nav__brand" href="index.html">Shoukear</a>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="adults.html">Adults</a></li>
-        <li><a href="kids.html">Kids</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="nav__cta" href="contact.html">Book a lesson</a></li>
-      </ul>
+      <a class="nav__brand" href="index.html">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c9762e"/>
+              <stop offset="1" stop-color="#d9a441"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lg)"/>
+          <text x="24" y="32" font-size="23" text-anchor="middle" fill="#fdf7ec" font-family="'Tajawal','Geeza Pro','Arial',sans-serif" font-weight="700">ش</text>
+        </svg>
+        <span>Shoukear</span>
+      </a>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="adults.html" data-i18n="nav.adults">Adults</a></li>
+          <li><a href="kids.html" data-i18n="nav.kids">Kids</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li><a class="nav__cta" href="contact.html" data-i18n="nav.book">Book a lesson</a></li>
+        </ul>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en"><span class="flag">🇬🇧</span><span class="lang-label">EN</span></button>
+          <button type="button" data-lang="nl"><span class="flag">🇳🇱</span><span class="lang-label">NL</span></button>
+          <button type="button" data-lang="ar"><span class="flag">🇸🇦</span><span class="lang-label">ع</span></button>
+        </div>
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
     </nav>
   </header>
 
@@ -27,8 +50,8 @@
     <section class="hero">
       <div class="hero__inner">
         <div>
-          <h1>Hi, I'm Nour</h1>
-          <p class="lead">
+          <h1 data-i18n="about.heroTitle">Hi, I'm Nour</h1>
+          <p class="lead" data-i18n="about.heroLead">
             I'm a native Arabic speaker living in the Netherlands, and I love
             helping people find their voice in Arabic — whether you're starting
             from your very first letter or reconnecting with a language you
@@ -44,8 +67,8 @@
 
     <section>
       <div class="container">
-        <h2>Teaching philosophy</h2>
-        <p class="section-intro">
+        <h2 data-i18n="about.philTitle">Teaching philosophy</h2>
+        <p class="section-intro" data-i18n="about.philText">
           Speaking comes first. From the very first lesson we talk in Arabic —
           at your pace, with plenty of patience and zero judgment. Grammar and
           reading are woven in as you need them, so everything you learn is
@@ -56,19 +79,19 @@
 
     <section class="alt">
       <div class="container">
-        <h2>Credentials &amp; trust</h2>
+        <h2 data-i18n="about.credTitle">Credentials &amp; trust</h2>
         <div class="card-grid">
           <div class="card">
-            <span class="badge">✔ VOG certified</span>
-            <p style="margin-top:16px;">
+            <span class="badge" data-i18n="about.vogBadge">✔ VOG certified</span>
+            <p style="margin-top:16px;" data-i18n="about.vogText">
               Holds a VOG (Verklaring Omtrent het Gedrag / certificate of good
               conduct), especially relevant for parents booking lessons for
               children.
             </p>
           </div>
           <div class="card">
-            <h3>Native speaker</h3>
-            <p>
+            <h3 data-i18n="about.nativeTitle">Native speaker</h3>
+            <p data-i18n="about.nativeText">
               Arabic is my mother tongue, and I teach both Modern Standard
               Arabic (Fusha) and everyday spoken Arabic — adapted to each
               learner's goals, for adults and children alike.
@@ -78,13 +101,13 @@
       </div>
     </section>
 
-    <section style="text-align:center;">
+    <section class="band" style="text-align:center;">
       <div class="container">
-        <h2>Want to meet first?</h2>
-        <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+        <h2 data-i18n="about.meetTitle">Want to meet first?</h2>
+        <p class="section-intro" style="margin-left:auto;margin-right:auto;" data-i18n="about.meetText">
           Book a free intro call — no commitment, just a conversation.
         </p>
-        <a class="btn btn--primary" href="contact.html">Book your intro call</a>
+        <a class="btn btn--primary" href="contact.html" data-i18n="btn.introShort">Book your intro call</a>
       </div>
     </section>
   </main>
@@ -94,12 +117,13 @@
     href="https://wa.me/31600000000"
     target="_blank"
     rel="noopener"
+    data-i18n="float.wa"
   >WhatsApp us</a>
 
   <footer class="site-footer">
     <div class="container">
-      <span>© <span id="year"></span> Shoukear. All rights reserved.</span>
-      <span><a href="contact.html">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a></span>
+      <span>© <span id="year"></span> <span data-i18n="footer.rights">Shoukear. All rights reserved.</span></span>
+      <span><a href="contact.html" data-i18n="footer.contact">Contact</a> · <a href="https://wa.me/31600000000" target="_blank" rel="noopener" data-i18n="footer.wa">WhatsApp</a></span>
     </div>
   </footer>
 
