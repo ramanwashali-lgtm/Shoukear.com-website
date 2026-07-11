@@ -1,4 +1,19 @@
-// Shoukear.com — shared behavior: nav, language switcher (EN/NL/AR + RTL)
+// Shoukear.com — shared behavior: nav, language switcher (EN/NL/AR + RTL),
+// WhatsApp links, Cal.com booking embed.
+
+// ─────────────────────────────────────────────────────────────────────
+// SITE CONFIG — the only place you need to edit contact/booking details.
+const CONFIG = {
+  // Nour's WhatsApp number: country code + number, digits only (no +, no spaces).
+  // Example for a Dutch mobile 06 12 34 56 78 → "31612345678".
+  whatsapp: "31600000000",
+
+  // Cal.com booking link, e.g. "shoukear/intro-call" (the part after cal.com/).
+  // Leave "" until the Cal.com account + "intro call" event type exist —
+  // the booking calendar on contact.html appears automatically once set.
+  calLink: ""
+};
+// ─────────────────────────────────────────────────────────────────────
 
 const I18N = {
   en: {
@@ -97,6 +112,8 @@ const I18N = {
     "contact.docTitle": "Contact & Booking — Shoukear",
     "contact.heroTitle": "Contact & booking",
     "contact.heroLead": "Book a free 15-minute intro call to find the right fit, or reach out directly on WhatsApp with any questions.",
+    "contact.calTitle": "Book your free intro call online",
+    "contact.calText": "Pick a time that suits you in the calendar below — the intro call is free and takes about 15 minutes.",
     "contact.bookTitle": "Book your free intro call",
     "contact.bookText": "The easiest way to get started: send a quick WhatsApp message with a few words about who the lessons are for (you or your child) and your level, and we'll plan a free 15-minute intro call together.",
     "contact.waBtn": "Chat on WhatsApp",
@@ -201,6 +218,8 @@ const I18N = {
     "contact.docTitle": "Contact & boeken — Shoukear",
     "contact.heroTitle": "Contact & boeken",
     "contact.heroLead": "Plan een gratis kennismakingsgesprek van 15 minuten of stel je vraag direct via WhatsApp.",
+    "contact.calTitle": "Plan je gratis kennismaking online",
+    "contact.calText": "Kies hieronder in de kalender een moment dat jou uitkomt — het kennismakingsgesprek is gratis en duurt ongeveer 15 minuten.",
     "contact.bookTitle": "Plan je gratis kennismaking",
     "contact.bookText": "De makkelijkste manier om te beginnen: stuur een kort WhatsApp-bericht met voor wie de lessen zijn (jijzelf of je kind) en je niveau, dan plannen we samen een gratis kennismakingsgesprek van 15 minuten.",
     "contact.waBtn": "Chat via WhatsApp",
@@ -305,6 +324,8 @@ const I18N = {
     "contact.docTitle": "التواصل والحجز — Shoukear",
     "contact.heroTitle": "التواصل والحجز",
     "contact.heroLead": "احجز مكالمة تعارف مجانية لمدة ١٥ دقيقة، أو تواصل مباشرة عبر واتساب لأي سؤال.",
+    "contact.calTitle": "احجز مكالمة التعارف المجانية عبر الإنترنت",
+    "contact.calText": "اختر الوقت الذي يناسبك في التقويم أدناه — مكالمة التعارف مجانية وتستغرق نحو ١٥ دقيقة.",
     "contact.bookTitle": "احجز مكالمة التعارف المجانية",
     "contact.bookText": "أسهل طريقة للبدء: أرسل رسالة واتساب قصيرة تخبرنا فيها لمن الدروس (لك أم لطفلك) وما مستواك، وسنرتب معًا مكالمة تعارف مجانية لمدة ١٥ دقيقة.",
     "contact.waBtn": "تحدث عبر واتساب",
@@ -376,7 +397,60 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ignore */
   }
   setLang(stored || "en");
+
+  // Point every WhatsApp link at the number from CONFIG
+  if (CONFIG.whatsapp) {
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach((a) => {
+      a.href = "https://wa.me/" + CONFIG.whatsapp;
+    });
+  }
+
+  initCalBooking();
 });
+
+// Cal.com inline booking embed (contact.html). Does nothing until
+// CONFIG.calLink is set — then it reveals the #book section and loads
+// the calendar. Embed snippet from https://cal.com → event type → Embed.
+function initCalBooking() {
+  const section = document.getElementById("book");
+  const mount = document.getElementById("cal-embed");
+  if (!section || !mount || !CONFIG.calLink) return;
+
+  section.hidden = false;
+
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal;
+      let ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {};
+        cal.q = cal.q || [];
+        d.head.appendChild(d.createElement("script")).src = A;
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        const api = function () { p(api, arguments); };
+        const namespace = ar[1];
+        api.q = api.q || [];
+        if (typeof namespace === "string") {
+          cal.ns[namespace] = api;
+          p(cal, ar);
+        } else p(cal, ar);
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", { origin: "https://cal.com" });
+  Cal("inline", {
+    elementOrSelector: "#cal-embed",
+    calLink: CONFIG.calLink,
+    config: { theme: "light" }
+  });
+}
 
 /*
   Cookie-free analytics placeholder.
